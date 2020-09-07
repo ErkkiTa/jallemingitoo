@@ -1,7 +1,7 @@
 <?php
 
 require_once 'models/Book.php';
-
+    
 $list = Book::findAll();
 
 ?>
@@ -14,10 +14,11 @@ $list = Book::findAll();
     <title>Books</title>
 </head>
 <body>
+<ul>
     <?php foreach($list as $book){ ?>
 
     <li><a href="book.php?id=<?php echo $book->id;?>"><?php echo $book->title; ?></a></li>
     <?php } ?>
-
+</ul>
 </body>
 </html>
