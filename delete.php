@@ -2,7 +2,7 @@
 <?php
 
 require_once 'models/Book.php';
-require_once 'models/BookAuthors.php';
+require_once 'models/BookAuthor.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
@@ -13,6 +13,7 @@ foreach ($bookAuthors as $o) {
 }
 
 $book = Book::findByID($id);
+
 $book ->delete();
 
 header('Location: index.php');

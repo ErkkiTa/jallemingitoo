@@ -9,7 +9,7 @@ class BookAuthor {
         global $pdo;
 
         $stmt = $pdo->prepare('SELECT * FROM book_authors WHERE book_id=:book_id');
-        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Book');
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'BookAuthor');
         $stmt->execute(['book_id' => $bookId]);
 
         return $stmt->fetchAll();
