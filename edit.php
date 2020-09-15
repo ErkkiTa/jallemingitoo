@@ -9,9 +9,9 @@ $oBook = Book::findById($id);
 
 $oBook->title = $title;
 
-foreach((array)$oBook as $key => $value) {
-    var_dump($key);
-}
+$oBook->update();
+
+header("Location: book.php?id={$id}");
 
 
-var_dump($oBook);
+exit;
